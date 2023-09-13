@@ -6,13 +6,23 @@ import Form from "./Form";
 import Footer from "./Footer";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { TranslationProvider } from './TranslateContext';
+
 function App() {
   return (
     <div className="App">
       <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+
+        <TranslationProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+
+          </Routes>
+
+        </TranslationProvider>
+
+
+
       </div>
     </div>
   );

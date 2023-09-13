@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useTranslation } from "./TranslateContext";
 
 const Form = ({ list, setList, setInit }) => {
-  const [formValue, setFormValue] = useState("");
+    const { translate } = useTranslation();
+
+    const [formValue, setFormValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     if(formValue === ""){
@@ -42,10 +45,10 @@ const Form = ({ list, setList, setInit }) => {
       <input
         value={formValue}
         onChange={handleChange}
-        placeholder="Enter task ..."
+        placeholder={`${translate('enterTask')}`}
       />
       <button onClick={handleSubmit} type="submit">
-        Submit
+        {translate('submit')}
       </button>
     </form>
   );
